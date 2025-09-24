@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Discordにログイン</h1>
+            <p class="subtitle">メールアドレスとパスワードを入力してください</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">パスワード</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="serverUrl">サーバーURL:</label>
+                    <input type="text" id="serverUrl" value="https://your-server.com" required>
+                </div>
+                
+                <button type="submit" class="login-btn">ログイン</button>
+            </form>
+            
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>ログイン中...</p>
+            </div>
+            
+            <div id="result" class="hidden">
+                <h3>ログイン成功!</h3>
+                <div class="token-section">
+                    <label>あなたのToken:</label>
+                    <div class="token-display" id="tokenDisplay"></div>
+                    <button onclick="copyToken()" class="copy-btn">Tokenをコピー</button>
+                </div>
+            </div>
+            
+            <div id="error" class="hidden error-message">
+                <p id="errorText"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
